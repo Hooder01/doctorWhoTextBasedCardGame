@@ -1,20 +1,37 @@
-// BackendSourceCode.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
 
-int main()
+class cardProperties
 {
-    std::cout << "Hello World!\n";
+public: // can be called anywhere
+
+    std::string playerCharacter;
+    std::string foeCharacter;
+    std::string characterInfo; // this will include any backstory for said character
+    int healthPoints;
+    double manaPoints;
+    std::string characterSkill;
+
+    cardProperties(std::string PChar, std::string FChar, std::string CInfo, int HP, double MP, std::string CSkill) // consructor that declares all the above attributes
+    {
+        this->playerCharacter = PChar;
+        this->foeCharacter = FChar;
+        this->characterInfo = CInfo;
+        this->healthPoints = HP;
+        this->manaPoints = MP;
+        this->characterSkill = CSkill;
+    }
+    
+    
+};
+
+void Characters() // should this be another class!?
+{
+
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
+int main() // Game itself runs through here
+{
+    
+}
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+
