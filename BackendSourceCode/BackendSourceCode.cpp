@@ -23,40 +23,29 @@ public: // can be called anywhere
     
 };
 
-class gameLogic : public cardProperties // drived child class of cardProperties
+class callGameLogic
 {
-public:
+    public:
 
-    void Characters()
-    {
-        cardProperties charObj1("14th Doctor", "Old TimeLord", 90, 14.0, "Sonic Shelid: //TEMP");
-        cardProperties charObj2("K9", "Sexy Robot Dog", 60, 26.0, "Tech Nose: //TEMP");
+        void character() // should this method be a string?
+        {
+            cardProperties charObj("14th Doctor", "Old TimeLord", 60, 14.0, "Sonic Sheild: ");
 
-    }
+            std::cout << charObj.playerCharacter;
+        }
+
+        void callingPlayerSelection()
+        {
+            std::cout << character;
+        }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-void callingGLogic() // used for calling all classes and functions, this will be called in main!
-{
     
-}
-
 
 int main() // Game itself runs through here
 {
-    
+    callGameLogic myclass;
+
+    myclass.callingPlayerSelection();
 }
 
 
