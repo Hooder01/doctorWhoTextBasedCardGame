@@ -1,0 +1,13 @@
+If you're passing an contrustor objects 
+
+make sure all the data you have get's values 
+
+for example 
+
+I defined 5 int types 
+
+then gave them new object names
+
+now I try and call that constructor object however Iv'e only given 4 interger whole numbers 
+
+this results in E0289 despite asking for a constuctor you already have 

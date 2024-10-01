@@ -8,8 +8,8 @@ public: // can be called anywhere
     std::string foeCharacter;
     std::string characterInfo; // this will include any backstory for said character
     int healthPoints;
-    double manaPoints;
-    std::string characterSkill;
+    float manaPoints;
+    std::string characterSkill; // this will need to be more than just a string!
 
     cardProperties(std::string PChar, std::string FChar, std::string CInfo, int HP, double MP, std::string CSkill) // consructor that declares all the above attributes
     {
@@ -24,10 +24,19 @@ public: // can be called anywhere
     
 };
 
-void Characters() // should this be another class!?
+class gameLogic : public cardProperties // drived child class of cardProperties
 {
+public:
 
-}
+    void Characters()
+    {
+        cardProperties charObj1("14th Doctor", "TEMP//is foe needed here?", "Old TimeLord", 90, 14.0, "Sonic Shelid: //TEMP");
+    }
+};
+
+
+
+
 
 int main() // Game itself runs through here
 {
