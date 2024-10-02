@@ -20,27 +20,28 @@ public: // can be called anywhere
         this->characterSkill = CSkill;
     }
     
+    void cardPlayerInfo() 
+    {
+        cardProperties playerObj1("10th Doctor", "900 year old TimeLord", 16, 15.6, "Born to run: Low level enemies will scatter in one hit!");
+        cardProperties playObj2("Captain Jack", "The Guy with a plan", 15, 18.1, "Hey Ladies!: High chance to charm even bosses");
+        cardProperties playObj3("K9", "Good Boy!", 12, 22.1, "Unit at 100%!: Can scan next wave of enemies");
+    }
     
 };
 
-class callGameLogic
+class cardGameLogic : public cardProperties 
 {
-    public:
-
-        void character() // should this method be a string?
-        {
-            cardProperties charObj("14th Doctor", "Old TimeLord", 60, 14.0, "Sonic Sheild: ");
-
-            std::cout << charObj.playerCharacter;
-        }
-
-        
+    void PlayerChoice() 
+    {
+        std::cout << "Please select your character of choice (they can not be changed again until a round is over!)";
+        std::cout << playerObj1(playerCharacter);
+    }
 };
     
 
 int main() // Game itself runs through here
 {
-    std::cout << "TEST!";
+    
 }
 
 
