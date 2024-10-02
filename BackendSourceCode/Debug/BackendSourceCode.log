@@ -1,2 +1,2 @@
 ﻿  BackendSourceCode.cpp
-C:\Users\The Hooder\Desktop\doctorWhoTextBasedCardGame\BackendSourceCode\BackendSourceCode.cpp(39,1): error C3867: 'callGameLogic::character': non-standard syntax; use '&' to create a pointer to member
+  BackendSourceCode.vcxproj -> C:\Users\The Hooder\Desktop\doctorWhoTextBasedCardGame\BackendSourceCode\Debug\BackendSourceCode.exe

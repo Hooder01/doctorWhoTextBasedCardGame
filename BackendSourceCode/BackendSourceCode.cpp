@@ -34,18 +34,13 @@ class callGameLogic
             std::cout << charObj.playerCharacter;
         }
 
-        void callingPlayerSelection()
-        {
-            std::cout << character;
-        }
+        
 };
     
 
 int main() // Game itself runs through here
 {
-    callGameLogic myclass;
-
-    myclass.callingPlayerSelection();
+    std::cout << "TEST!";
 }
 
 
