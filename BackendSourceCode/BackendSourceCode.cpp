@@ -31,10 +31,16 @@ public: // can be called anywhere
 
 class cardGameLogic : public cardProperties 
 {
+
+    std::string userSelect;
+
+
     void PlayerChoice() 
     {
         std::cout << "Please select your character of choice (they can not be changed again until a round is over!)";
-        std::cout << playerObj1(playerCharacter);
+        
+        std::cout << playerCharacter;
+
     }
 };
     
