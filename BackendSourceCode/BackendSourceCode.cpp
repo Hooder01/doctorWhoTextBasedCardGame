@@ -1,43 +1,26 @@
 #include <iostream>
 
-class cardProperties
+void cardInformation()
 {
-public: // can be called anywhere
-
-    std::string playerCharacter;
-    
-    std::string characterInfo; // this will include any backstory for said character
-    int healthPoints;
-    float manaPoints;
-    std::string characterSkill; // this will need to be more than just a string!
-
-    cardProperties(std::string PChar, std::string CInfo, int HP, float MP, std::string CSkill) // consructor that declares all the above attributes
+    struct cardProperties
     {
-        this->playerCharacter = PChar;
-        this->characterInfo = CInfo;
-        this->healthPoints = HP;
-        this->manaPoints = MP;
-        this->characterSkill = CSkill;
-    }
-    
-    void cardPlayerInfo() 
-    {
-        cardProperties playerObj1("10th Doctor", "900 year old TimeLord", 16, 15.6, "Born to run: Low level enemies will scatter in one hit!");
-        cardProperties playObj2("Captain Jack", "The Guy with a plan", 15, 18.1, "Hey Ladies!: High chance to charm even bosses");
-        cardProperties playObj3("K9", "Good Boy!", 12, 22.1, "Unit at 100%!: Can scan next wave of enemies");
-    }
-    
-};
+        std::string characterInformation;
+        int HP;
+        double MP;
+        std::string characterSkill;
+    } characterobject1, characterobject2;
 
-class cardGameLogic : public cardProperties 
-{
-    void PlayerChoice() 
+
+    void callingCard(cardProperties CP)
     {
-        std::cout << "Please select your character of choice (they can not be changed again until a round is over!)";
-        std::cout << playerObj1(playerCharacter);
+        characterobject1.characterInformation = "Tenth Doctor";
+        characterobject1.HP = 16;
     }
-};
-    
+}
+
+
+
+
 
 int main() // Game itself runs through here
 {
