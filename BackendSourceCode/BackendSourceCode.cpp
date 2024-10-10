@@ -14,31 +14,32 @@ class cardData
 
     }
 
-    cardData(std::string cn, int hp, double mp) // public constructor with paremeters
-    {
-        characterName = cn;
-        HP = hp;
-        MP = mp;
-        // assgined the new paremeter data names
-    }
+    cardData(std::string cn, int hp, double mp); // Constuctor declaration
 };
 
 
-void characterInformation() 
+cardData::cardData(std::string cn, int hp, double mp) // Constructor definition outside the class
 {
-    cardData cardInfo1("Tenth Doctor", 14, 15.1);
-    cardData cardInfo2("K9", 12, 17.1);
+    characterName = cn;
+    HP = hp;
+    MP = mp;
+    // Acsess to these objects can be anywhere!
+
+    
 }
 
-class gameLogic
+class gameLogic 
 {
-    public:
 
-    /// should this be a class or a function!?
-
-    void playerStart() 
+    void playbleChar() // <-- this should be called for player selection
     {
-        std::cout << "Please choose your hero!" << cardInfo1.HP; // why is this undifined
+        cardData charInfo1("Tenth Doctor", 14, 16.1);
+        cardData charInfo2("K9", 12, 18.1);
+    }
+
+    void beginPlay()
+    {
+        std::cout << "DOCTOR WHO: The Ten Rings "
     }
 };
 
