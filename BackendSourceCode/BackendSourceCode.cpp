@@ -28,7 +28,7 @@ cardData::cardData(std::string cn, int hp, double mp) // Constructor definition 
     
 }
 
-class gameLogic 
+class gameLogic
 {
 
     void playbleChar() // <-- this should be called for player selection
@@ -37,15 +37,19 @@ class gameLogic
         cardData charInfo2("K9", 12, 18.1);
     }
 
-    void beginPlay()
+  public: void onBeginPlay()
     {
-        std::cout << "DOCTOR WHO: The Ten Rings "
+        std::cout << "DOCTOR WHO: The Ten Rings Of Garcorndith";
+        std::cout << "\n\nPlease select your Story: " << charInfo
+        
     }
 };
 
-int main() 
+int main()
 {
-    
+    gameLogic objTEMP;
+
+    objTEMP.onBeginPlay();
 }
 
 
