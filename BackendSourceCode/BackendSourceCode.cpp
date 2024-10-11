@@ -24,18 +24,34 @@ cardData::cardData(std::string cn, int hp, double mp) // Constructor definition 
     HP = hp;
     MP = mp;
     // Acsess to these objects can be anywhere!
-
-    
 }
+
+class storyMiniGames 
+{
+    void TARDISMini1() 
+    {
+        std::cout << "(You need to set the Void Sequencer between a number of 10 and 15!)";
+        double voidSequence;
+        double playerselect;
+
+        std::cout << "VOID SEQUENCER SET: "; std::cin >> playerselect;
+
+        if (playerselect == 10, 11, 12, 13, 14, 15) // array!?
+        {
+
+        }
+    }
+};
 
 class gameLogic
 {
+  public: float ExtraPoints = 0.0; // this is only used for timing and minigames! (this may need to placed outside this class)
 
     void battleSystem(){}
 
     void TDStory()
     {
-        std::cout << "TEST TEST!!";
+        
     }
 
 
