@@ -28,16 +28,19 @@ cardData::cardData(std::string cn, int hp, double mp) // Constructor definition 
 
 class storyMiniGames 
 {
-    void TARDISMini1() 
+    public: void TARDISMini1() 
     {
         std::cout << "(You need to set the Void Sequencer between a number of 10 and 15!)";
         double voidSequence;
         double playerselect;
+        int numbers[4]{ 11, 12, 13, 14 };
 
         std::cout << "VOID SEQUENCER SET: "; std::cin >> playerselect;
 
-        if (playerselect == 10, 11, 12, 13, 14, 15) // array!?
+        if (playerselect == numbers[0,1,2,3]) // <-- this is not working!!
         {
+            std::cout << "TEST!!";
+
 
         }
     }
@@ -51,7 +54,9 @@ class gameLogic
 
     void TDStory()
     {
-        
+        storyMiniGames storyCall;
+
+        storyCall.TARDISMini1();
     }
 
 
