@@ -33,15 +33,19 @@ class storyMiniGames
         std::cout << "(You need to set the Void Sequencer between a number of 10 and 15!)";
         double voidSequence;
         double playerselect;
-        int numbers[4]{ 11, 12, 13, 14 };
+        int numberArray[4]{ 11, 12, 13, 14 };
 
         std::cout << "VOID SEQUENCER SET: "; std::cin >> playerselect;
-
-        if (playerselect == numbers[0,1,2,3]) // <-- this is not working!!
+        
+        if (playerselect != numberArray[0]) 
         {
-            std::cout << "TEST!!";
-
-
+            std::cout << "\n\n'There we are..\n\n what was that all about old girl?'";
+            std::cout << "\n\n\n(YOU WON Minigame)" << std::endl;
+        }
+        else 
+        {
+            std::cout << "no..\n\n that's not it" << std::endl; // try again message (needs a loop of sorts)
+            std::cout << "\n\n\n(YOU LOST Minigame)" << std::endl;
         }
     }
 };
@@ -50,13 +54,22 @@ class gameLogic
 {
   public: float ExtraPoints = 0.0; // this is only used for timing and minigames! (this may need to placed outside this class)
 
-    void battleSystem(){}
+    void battleSystem()
+    {
+
+    }
 
     void TDStory()
     {
         storyMiniGames storyCall;
 
+        std::cout << "(The blue outshape of the TARDIS spins around and around inside of the space time vortex)" << std::endl;
+        std::cout << "The Doctor (you) look at the TARDIS control panel with gloomy face \n\n\n you sigh loudly to yourself \n\n\n'I'm getting too old for this..'";
+        std::cout << "you get back your focus and hit a switch (beep beep!) \n\n'that's odd..'  \n you crouch to the TARDIS scanner \n\n\n'the Void Sequencer needs reset?'\n\n" << std::endl;
         storyCall.TARDISMini1();
+
+        std::cout << "\n\n\n\n\n(BANG BANG!!) sparks fly from the TARDIS console and you fall to the ground!";
+        std::cout << "'THE KEY OF THE MARK HAS BEEN FOUND!' You stagger yourself up back to the console and see a black ghostly hooded figure\n\n 'how.. hello there!' you catch your words 'I don't believe we've had the plessure, I'm the Doctor'" << std::endl;
     }
 
 
@@ -67,7 +80,7 @@ class gameLogic
       cardData charInfo2("K9", 12, 18.1);
       // can we make these two sepreate somehow?
 
-      std::cout << "DOCTOR WHO: The Ten Rings Of Garcorndith";
+      std::cout << "DOCTOR WHO: Mark Of The Vortex Ring\n\n\n";
         
       int userStorySelection; // will promt user to select a number for the characters story
 
