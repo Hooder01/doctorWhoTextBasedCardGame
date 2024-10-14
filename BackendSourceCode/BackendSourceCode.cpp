@@ -56,7 +56,22 @@ class gameLogic
 
     void battleSystem()
     {
+        int callTurn = 0;
+        std::string userChoice;
+        cardData myobj;
 
+        std::cout << "TURN: " << callTurn++; // this will be incremed by 1 each turn!
+
+        std::cout << "\n\n(Would you like to view the tutorial? (y/n))";
+
+        if (userChoice == "y") 
+        {
+            
+        }
+        else 
+        {
+
+        }
     }
 
     void TDStory() // after user selects Tenth Doctor Side Story this is called to main
@@ -69,7 +84,7 @@ class gameLogic
         bool checkCurrentPath; // these values will be checked everytime and once a certain number is met, only few select options can be selected due to the users path of choice?
 
         std::string dialogueOption[3]{ "'Impossible..'(netural)", "'I'm the Doctor, who are you?'(Light)", "'I demand to know you got inside my TARDIS!'(Dark)" }; // array?
-        std::string dialogueChoice; // // dilogue to have light, netural and dark paths?
+        std::string dialogueChoice;
 
         std::cout << "(The blue outshape of the TARDIS spins around and around inside of the space time vortex)" << std::endl;
         std::cout << "The Doctor (you) look at the TARDIS control panel with gloomy face \n\n\n you sigh loudly to yourself \n\n\n'I'm getting too old for this..'";
@@ -82,21 +97,28 @@ class gameLogic
 
         std::cin >> dialogueChoice;
 
-        if (dialogueChoice == dialogueOption[0])
+        // FIX THIS ARRAY!
+        /*if ()
         {
             std::cout << dialogueOption[0] << "How has this strange hooded figure entered your TARDIS?";
 
             neturalPath++; // Path is incrmented by 1
-
-            if (neturalPath == 10) 
-            {
-                std::cout << "(path of netural is being followed)";
-            }
         }
         else if (dialogueChoice == dialogueOption[1]) 
         {
-            std::cout << dialogueOption[1] << "'Listen.. I'm not a big fan of vistors who don't even send a post card first"
+            std::cout << dialogueOption[1] << "'Listen.. I'm not a big fan of vistors who may I add,don't even send a post card first!'";
+
+            lightPath++;
         }
+        else if (dialogueChoice == dialogueOption[2]) 
+        {
+            std::cout << dialogueOption[2] << "'I hope you're scared cause today is not the day to be messing with me. Why are you here!?";
+
+            darkPath++;
+        }*/
+
+
+        std::cout << "\n\n'ENOUGH!! THE KEY WILL COME WITH ME!'" << "\n\nYou need to defend yourself! (you grab an old wrench sitting below the console)" << "\n\n'Sorry but the key isn't opening it's doors any longer!'" << std::endl;
 
     }
 
