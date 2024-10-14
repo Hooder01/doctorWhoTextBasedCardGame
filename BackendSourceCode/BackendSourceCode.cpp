@@ -37,14 +37,14 @@ class storyMiniGames
 
         std::cout << "VOID SEQUENCER SET: "; std::cin >> playerselect;
         
-        if (playerselect != numberArray[0]) 
+        if (playerselect != numberArray[0]) // fix this!
         {
             std::cout << "\n\n'There we are..\n\n what was that all about old girl?'";
             std::cout << "\n\n\n(YOU WON Minigame)" << std::endl;
         }
         else 
         {
-            std::cout << "no..\n\n that's not it" << std::endl; // try again message (needs a loop of sorts)
+            std::cout << "\nno.. that's not it" << std::endl; // try again message (needs a loop of sorts)
             std::cout << "\n\n\n(YOU LOST Minigame)" << std::endl;
         }
     }
@@ -59,9 +59,17 @@ class gameLogic
 
     }
 
-    void TDStory()
+    void TDStory() // after user selects Tenth Doctor Side Story this is called to main
     {
-        storyMiniGames storyCall;
+        storyMiniGames storyCall; // this creates the object for the use of story mini games!
+
+        int neturalPath = 0; // all zero by default!
+        int lightPath = 0;
+        int darkPath = 0;
+        bool checkCurrentPath; // these values will be checked everytime and once a certain number is met, only few select options can be selected due to the users path of choice?
+
+        std::string dialogueOption[3]{ "'Impossible..'(netural)", "'I'm the Doctor, who are you?'(Light)", "'I demand to know you got inside my TARDIS!'(Dark)" }; // array?
+        std::string dialogueChoice; // // dilogue to have light, netural and dark paths?
 
         std::cout << "(The blue outshape of the TARDIS spins around and around inside of the space time vortex)" << std::endl;
         std::cout << "The Doctor (you) look at the TARDIS control panel with gloomy face \n\n\n you sigh loudly to yourself \n\n\n'I'm getting too old for this..'";
@@ -69,10 +77,28 @@ class gameLogic
         storyCall.TARDISMini1();
 
         std::cout << "\n\n\n\n\n(BANG BANG!!) sparks fly from the TARDIS console and you fall to the ground!";
-        std::cout << "'THE KEY OF THE MARK HAS BEEN FOUND!' You stagger yourself up back to the console and see a black ghostly hooded figure\n\n 'how.. hello there!' you catch your words 'I don't believe we've had the plessure, I'm the Doctor'" << std::endl;
+        std::cout << "\n\n'THE KEY OF THE MARK HAS BEEN FOUND!'\n\n You stagger yourself up back to the console and see a black ghostly hooded figure";
+        std::cout << "\n\nChoose your words carfully: " << "\n\na:" << dialogueOption[0] << "\n\nb:" << dialogueOption[1] << "\n\nc:" << dialogueOption[2];
+
+        std::cin >> dialogueChoice;
+
+        if (dialogueChoice == dialogueOption[0])
+        {
+            std::cout << dialogueOption[0] << "How has this strange hooded figure entered your TARDIS?";
+
+            neturalPath++; // Path is incrmented by 1
+
+            if (neturalPath == 10) 
+            {
+                std::cout << "(path of netural is being followed)";
+            }
+        }
+        else if (dialogueChoice == dialogueOption[1]) 
+        {
+            std::cout << dialogueOption[1] << "'Listen.. I'm not a big fan of vistors who don't even send a post card first"
+        }
+
     }
-
-
 
   public: void onBeginPlay() // this is called into the main function first!
     {
@@ -84,9 +110,9 @@ class gameLogic
         
       int userStorySelection; // will promt user to select a number for the characters story
 
-      std::cout << "\n\nPlease Select Your Story!\n\n" << "\n\n1:" << charInfo1.characterName << "\n\n2:" << charInfo2.characterName;
+      std::cout << "\n\nPlease Select Your Story!\n\n" << "\n\n1:" << charInfo1.characterName << "\n\n2:" << charInfo2.characterName << "\n";
         
-      std::cin >> userStorySelection;
+      std::cin >>  userStorySelection;
 
       if (userStorySelection == 1)
       {
