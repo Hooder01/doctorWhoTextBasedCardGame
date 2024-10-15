@@ -28,9 +28,9 @@ cardData::cardData(std::string cn, int hp, double mp) // Constructor definition 
     // Acsess to these objects can be anywhere!
 }
 
-class MonstersData : public cardData // will hold all data to call enemies to the battleSystem()
+struct monsterData // choose a stuct over a class in the end
 {
-    void hoodedFigure() 
+    void hoodedFigure()
     {
         // would like to add some sorta art here in future
 
@@ -41,7 +41,7 @@ class MonstersData : public cardData // will hold all data to call enemies to th
         std::cout << MonsterInfo1.characterName << "\n" << healthBar; // monsters like this will display in UI just above the UIDisplay array!
     }
 
-    void dalek() 
+    void dalek()
     {
         // would like to add some sorta art here in future
 
@@ -53,8 +53,11 @@ class MonstersData : public cardData // will hold all data to call enemies to th
     }
 };
 
+
 class storyMiniGames 
 {
+    float ExtraPoints = 0.0; // this is only used for timing and minigames! (this may need to placed outside this class)
+
     public: void TARDISMini1() 
     {
         std::cout << "(You need to set the Void Sequencer between a number of 10 and 15!)";
@@ -75,13 +78,15 @@ class storyMiniGames
             std::cout << "\n\n\n(YOU LOST Minigame)" << std::endl;
         }
     }
+    public: void TARDISMini2() 
+{
+
+}
 };
 
 class gameLogic
 {
-  public: float ExtraPoints = 0.0; // this is only used for timing and minigames! (this may need to placed outside this class)
-  
-    void battleSystem()
+    void battleSystem() // being public may fix this!?
     {
         cardData charInfo1("Tenth Doctor", 14, 16.1);
         cardData charInfo2("K9", 12, 18.1); // Do these need to be in any other class?
@@ -90,6 +95,8 @@ class gameLogic
         std::string userChoice;
         int callingAttack; // attack is NOT used within the context of an constrctor 
         std::string UIDisplay[3]{ "1: Attack", "2. Defend", "3. Stats" };// Array for the use of the battle menu UI 
+        std::string beginBattle = "[BATTLE BEGIN!]"; // called every battleScenario()
+        
 
         std::cout << "\n\n(Would you like to view the tutorial? (y/n))"; // user can view the basics if they wish
 
@@ -101,11 +108,16 @@ class gameLogic
         }
         else 
         {
-            std::cout << "TURN: " << callTurn++; // this will be incremed by 1 each turn!
-
-            
+            std::cout << beginBattle << "\n\n" << 
         }
     }
+
+    /*void battleScenarioTD1()
+    {
+        battleSystem();
+
+        
+    } thinking on it! */
 
     void TDStory() // after user selects Tenth Doctor Side Story this is called to main
     {
@@ -187,9 +199,7 @@ class gameLogic
 
 int main()
 {
-    gameLogic objTEMP;
-
-    objTEMP.battleSystem(); // Currenly testing combat
+    
 }
 
 
