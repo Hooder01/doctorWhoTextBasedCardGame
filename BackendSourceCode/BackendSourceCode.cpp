@@ -15,6 +15,8 @@ class cardData
     }
 
     cardData(std::string cn, int hp, double mp); // Constuctor declaration
+
+    
 };
 
 
@@ -25,6 +27,31 @@ cardData::cardData(std::string cn, int hp, double mp) // Constructor definition 
     MP = mp;
     // Acsess to these objects can be anywhere!
 }
+
+class MonstersData : public cardData // will hold all data to call enemies to the battleSystem()
+{
+    void hoodedFigure() 
+    {
+        // would like to add some sorta art here in future
+
+        cardData MonsterInfo1("[Unknown Hooded Figure]", 5, 10.1);
+
+        std::string healthBar = "[-----]";
+
+        std::cout << MonsterInfo1.characterName << "\n" << healthBar; // monsters like this will display in UI just above the UIDisplay array!
+    }
+
+    void dalek() 
+    {
+        // would like to add some sorta art here in future
+
+        cardData MonsterInfo2("[Dalek]", 9, 14.1);
+
+        std::string healthBar = "[---------]";
+
+        std::cout << MonsterInfo2.characterName << "\n" << healthBar;
+    }
+};
 
 class storyMiniGames 
 {
@@ -53,24 +80,30 @@ class storyMiniGames
 class gameLogic
 {
   public: float ExtraPoints = 0.0; // this is only used for timing and minigames! (this may need to placed outside this class)
-
+  
     void battleSystem()
     {
-        int callTurn = 0;
+        cardData charInfo1("Tenth Doctor", 14, 16.1);
+        cardData charInfo2("K9", 12, 18.1); // Do these need to be in any other class?
+
+        int callTurn = 1;
         std::string userChoice;
-        cardData myobj;
+        int callingAttack; // attack is NOT used within the context of an constrctor 
+        std::string UIDisplay[3]{ "1: Attack", "2. Defend", "3. Stats" };// Array for the use of the battle menu UI 
 
-        std::cout << "TURN: " << callTurn++; // this will be incremed by 1 each turn!
+        std::cout << "\n\n(Would you like to view the tutorial? (y/n))"; // user can view the basics if they wish
 
-        std::cout << "\n\n(Would you like to view the tutorial? (y/n))";
+        std::cin >> userChoice;
 
         if (userChoice == "y") 
         {
-            
+            std::cout << "(below is the Turn System)" << "\n\n" << UIDisplay[0] << " <-- (Use this to do a simple melee attack, more options will open later!)" << "\n" << UIDisplay[1]; // finish this! <--
         }
         else 
         {
+            std::cout << "TURN: " << callTurn++; // this will be incremed by 1 each turn!
 
+            
         }
     }
 
@@ -124,15 +157,12 @@ class gameLogic
 
   public: void onBeginPlay() // this is called into the main function first!
     {
-      cardData charInfo1("Tenth Doctor", 14, 16.1);
-      cardData charInfo2("K9", 12, 18.1);
-      // can we make these two sepreate somehow?
 
       std::cout << "DOCTOR WHO: Mark Of The Vortex Ring\n\n\n";
         
       int userStorySelection; // will promt user to select a number for the characters story
 
-      std::cout << "\n\nPlease Select Your Story!\n\n" << "\n\n1:" << charInfo1.characterName << "\n\n2:" << charInfo2.characterName << "\n";
+      std::cout << "\n\nPlease Select Your Story!\n\n" << "\n\n1: " << "Tenth Doctor" << "\n\n2: " << "K9" << "\n\n" << "3: " << "Exit Game";
         
       std::cin >>  userStorySelection;
 
@@ -144,6 +174,12 @@ class gameLogic
       {
           std::cout << "IN PRODUCTION!"; // TEMP!
       }
+      else if (userStorySelection == 3) 
+      {
+          // Console should shut down here <--
+          std::cout << "\n\nThanks For Playing!" << std::endl;
+          exit(0);
+      }
     }
 
         
@@ -152,8 +188,8 @@ class gameLogic
 int main()
 {
     gameLogic objTEMP;
-    // THIS WILL ALL CHANGE!
-    objTEMP.onBeginPlay();
+
+    objTEMP.battleSystem(); // Currenly testing combat
 }
 
 
