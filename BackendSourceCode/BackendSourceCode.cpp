@@ -28,15 +28,17 @@ cardData::cardData(std::string cn, int hp, double mp) // Constructor definition 
     // Acsess to these objects can be anywhere!
 }
 
-struct monsterData // choose a stuct over a class in the end
+class monsterData 
 {
+    public:
+
     void hoodedFigure()
     {
         // would like to add some sorta art here in future
 
         cardData MonsterInfo1("[Unknown Hooded Figure]", 5, 10.1);
 
-        std::string healthBar = "[-----]";
+        std::string healthBar = "      [-----]        ";
 
         std::cout << MonsterInfo1.characterName << "\n" << healthBar; // monsters like this will display in UI just above the UIDisplay array!
     }
@@ -53,7 +55,6 @@ struct monsterData // choose a stuct over a class in the end
     }
 };
 
-
 class storyMiniGames 
 {
     float ExtraPoints = 0.0; // this is only used for timing and minigames! (this may need to placed outside this class)
@@ -65,18 +66,10 @@ class storyMiniGames
         double playerselect;
         int numberArray[4]{ 11, 12, 13, 14 };
 
-        std::cout << "VOID SEQUENCER SET: "; std::cin >> playerselect;
+        std::cout << "\n\nVOID SEQUENCER SET: "; std::cin >> playerselect;
         
-        if (playerselect != numberArray[0]) // fix this!
-        {
-            std::cout << "\n\n'There we are..\n\n what was that all about old girl?'";
-            std::cout << "\n\n\n(YOU WON Minigame)" << std::endl;
-        }
-        else 
-        {
-            std::cout << "\nno.. that's not it" << std::endl; // try again message (needs a loop of sorts)
-            std::cout << "\n\n\n(YOU LOST Minigame)" << std::endl;
-        }
+        
+        
     }
     public: void TARDISMini2() 
 {
@@ -86,29 +79,42 @@ class storyMiniGames
 
 class gameLogic
 {
+    public:
+
     void battleSystem() // being public may fix this!?
     {
         cardData charInfo1("Tenth Doctor", 14, 16.1);
         cardData charInfo2("K9", 12, 18.1); // Do these need to be in any other class?
 
         int callTurn = 1;
-        std::string userChoice;
-        int callingAttack; // attack is NOT used within the context of an constrctor 
-        std::string UIDisplay[3]{ "1: Attack", "2. Defend", "3. Stats" };// Array for the use of the battle menu UI 
+        std::string userTutChoice;
+        int userSelect; // used or UIDisplay and other
+        
+        std::array UIDisplay[3]{ "1: Attack", "2. Defend", "3. Stats" };// Array for the use of the battle menu UI 
         std::string beginBattle = "[BATTLE BEGIN!]"; // called every battleScenario()
         
 
-        std::cout << "\n\n(Would you like to view the tutorial? (y/n))"; // user can view the basics if they wish
+        std::cout << "\n\n(Would you like to view the tutorial? (y/n))\n\n"; // user can view the basics if they wish
 
-        std::cin >> userChoice;
+        std::cin >> userTutChoice;
 
-        if (userChoice == "y") 
+        if (userTutChoice == "y") 
         {
             std::cout << "(below is the Turn System)" << "\n\n" << UIDisplay[0] << " <-- (Use this to do a simple melee attack, more options will open later!)" << "\n" << UIDisplay[1]; // finish this! <--
         }
         else 
         {
-            std::cout << beginBattle << "\n\n" << 
+            monsterData temp;
+            std::cout << beginBattle << "\n\n"; temp.hoodedFigure();
+
+            std::cout << UIDisplay[0] << "\n" << UIDisplay[1] << "\n" << UIDisplay[2];
+
+            std::cin >> userSelect;
+
+            if (userSelect == UIDisplay[0]) 
+            {
+
+            }
         }
     }
 
@@ -199,7 +205,11 @@ class gameLogic
 
 int main()
 {
-    
+    gameLogic TEMP;
+
+    TEMP.battleSystem();
+
+    // currently only used for debugging! 
 }
 
 
