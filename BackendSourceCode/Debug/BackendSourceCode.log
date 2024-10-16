@@ -1,4 +1,4 @@
 ﻿  BackendSourceCode.cpp
-C:\Users\The Hooder\Desktop\doctorWhoTextBasedCardGame\BackendSourceCode\BackendSourceCode.cpp(65,16): warning C4101: 'voidSequence': unreferenced local variable
-C:\Users\The Hooder\Desktop\doctorWhoTextBasedCardGame\BackendSourceCode\BackendSourceCode.cpp(143,14): warning C4101: 'checkCurrentPath': unreferenced local variable
+C:\Users\The Hooder\Desktop\doctorWhoTextBasedCardGame\BackendSourceCode\BackendSourceCode.cpp(40,16): warning C4101: 'voidSequence': unreferenced local variable
+C:\Users\The Hooder\Desktop\doctorWhoTextBasedCardGame\BackendSourceCode\BackendSourceCode.cpp(120,14): warning C4101: 'checkCurrentPath': unreferenced local variable
   BackendSourceCode.vcxproj -> C:\Users\The Hooder\Desktop\doctorWhoTextBasedCardGame\BackendSourceCode\Debug\BackendSourceCode.exe

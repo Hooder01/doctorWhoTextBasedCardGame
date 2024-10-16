@@ -28,23 +28,7 @@ cardData::cardData(std::string cn, int hp, double mp) // Constructor definition 
     // Acsess to these objects can be anywhere!
 }
 
-/*class monsterData
-{
-    public:
 
-    
-
-    void dalek()
-    {
-        // would like to add some sorta art here in future
-
-        cardData MonsterInfo2("[Dalek]", 9, 14.1);
-
-        std::string healthBar = "[---------]";
-
-        std::cout << MonsterInfo2.characterName << "\n" << healthBar;
-    }
-}; still want to use this class?*/
 
 class storyMiniGames 
 {
@@ -57,39 +41,22 @@ class storyMiniGames
         double playerselect;
         int numberArray[4]{ 11, 12, 13, 14 };
 
-        std::cout << "\n\nVOID SEQUENCER SET: "; std::cin >> playerselect; // this needs fixed!!
-        
-        
-        
+        std::cout << "\n\nVOID SEQUENCER SET: "; std::cin >> playerselect; // this needs fixed!!   
     }
-    public: void TARDISMini2() 
-{
-
-}
+ 
 };
 
 class gameLogic
 {
-    public:
-
-   void hoodedFigure()
-   {
-            // would like to add some sorta art here in future
-
-            cardData MonsterInfo1("[Unknown Hooded Figure]", 5, 10.1);
-
-            std::string healthBar = "      [-----]        ";
-
-            std::cout << MonsterInfo1.characterName << "\n" << healthBar; // monsters like this will display in UI just above the UIDisplay array!
-   }
-
+   public:
 
     void battleSystem() // being public may fix this!?
     {
         cardData charInfo1("Tenth Doctor", 14, 16.1);
-        cardData charInfo2("K9", 12, 18.1); // Do these need to be in any other class?
-        
+        cardData MonsterInfo1("[Unknown Hooded Figure]", 5, 10.1); 
 
+        std::string callingHealthBar[5]{ "[-]", "[--]", "[---]", "[----]", "[-----]" }; // this will be used to display the damage done by the player (this will incresss depending on the type of enemy)
+        
         int callTurn = 1;
         std::string userTutChoice;
         int userSelect; // used or UIDisplay and other
@@ -109,7 +76,7 @@ class gameLogic
         else 
         {
             
-            std::cout << beginBattle << "\n\n" << 
+            std::cout << beginBattle << "\n\n" << MonsterInfo1.characterName << "\n\n" << callingHealthBar[4];
 
             std::cout << "\n\n" << UIDisplay[0] << "\n" << UIDisplay[1] << "\n" << UIDisplay[2];
 
@@ -118,15 +85,20 @@ class gameLogic
 
             if(userSelect == 1)
             {
-               
+               // we need a number that can hit the health bar between at least 1 and 3 (not wanting to be an instant hit)
+                std::cout << "(Whack!)";
             }
             if (userSelect == 2) 
             {
-
+                // logic invloving our HP the hooded figure could hit between 0 and 2
             }
             else if(userSelect == 3)
             {
+                std::cout << "\n\n" << "HP: " << charInfo1.HP;
+                std::cout << "\n" << "MP: " << charInfo1.MP;
+                std::cout << "\n" << "Skill: " << "(Locked)" << std::endl; // <-- this will change from a string
 
+                // send back to begining (for loop needed?)
             }
         }
     }
