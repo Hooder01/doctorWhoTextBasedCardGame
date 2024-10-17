@@ -38,10 +38,10 @@ class storyMiniGames
     {
         std::cout << "(You need to set the Void Sequencer between a number of 10 and 15!)";
         double voidSequence;
-        double playerselect;
+        int playerselect;
         int numberArray[4]{ 11, 12, 13, 14 };
 
-        std::cout << "\n\nVOID SEQUENCER SET: "; std::cin >> playerselect; // this needs fixed!!   
+        std::cout << "\n\nVOID SEQUENCER SET: "; std::cin >> playerselect; // now fixed? rewrite!  
     }
  
 };
@@ -49,6 +49,16 @@ class storyMiniGames
 class gameLogic
 {
    public:
+
+       void damageCall() // this method needs to be called in the battleSystem() (during battle itself)
+       {
+           srand(time(0)); // <-- This makes sure the number is random each time the system calls for it
+
+           int damageTaken = rand() % 6; // Damage player/user can take between 1 and 6
+           int damageTakenOnDefend = rand() % 2; // Damage player can take (if using defend command) bewteen 1 and 2
+
+           int meleeAttack = rand() % 3; // this is the basic attack the player can do, between 1 and 3
+       }
 
     void battleSystem() // being public may fix this!?
     {
@@ -83,10 +93,15 @@ class gameLogic
             std::cin >> userSelect;
             
 
-            if(userSelect == 1)
+            if(userSelect == 1) // should be somehow be using a for loop?
             {
-               // we need a number that can hit the health bar between at least 1 and 3 (not wanting to be an instant hit)
-                std::cout << "(Whack!)";
+                meleeAttack = MonsterInfo1.HP; // fix this!!
+                
+                if(MonsterInfo1.HP < 5)
+                {
+                    std::cout << "    (Whack!)\n\n" << MonsterInfo1.characterName << callingHealthBar[3] // SHIT!!!!
+                }
+          
             }
             if (userSelect == 2) 
             {

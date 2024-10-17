@@ -1,4 +1,5 @@
 ﻿  BackendSourceCode.cpp
 C:\Users\The Hooder\Desktop\doctorWhoTextBasedCardGame\BackendSourceCode\BackendSourceCode.cpp(40,16): warning C4101: 'voidSequence': unreferenced local variable
-C:\Users\The Hooder\Desktop\doctorWhoTextBasedCardGame\BackendSourceCode\BackendSourceCode.cpp(120,14): warning C4101: 'checkCurrentPath': unreferenced local variable
+C:\Users\The Hooder\Desktop\doctorWhoTextBasedCardGame\BackendSourceCode\BackendSourceCode.cpp(55,22): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\The Hooder\Desktop\doctorWhoTextBasedCardGame\BackendSourceCode\BackendSourceCode.cpp(130,14): warning C4101: 'checkCurrentPath': unreferenced local variable
   BackendSourceCode.vcxproj -> C:\Users\The Hooder\Desktop\doctorWhoTextBasedCardGame\BackendSourceCode\Debug\BackendSourceCode.exe
